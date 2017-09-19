@@ -7,7 +7,7 @@ public class Pilhas {
 
     public Pilhas() {
         this.posicaodaPilha = -1;
-        this.pilha = new Object[40];
+        this.pilha = new Object[5];
     }
 
     public boolean pilhaVazia() {
@@ -65,16 +65,12 @@ public class Pilhas {
         }
     }
 
-    public boolean Palindromo(Pilhas pilhaAux0, Pilhas pilhaAux1, Pilhas pillhaAux2) {
-//        public boolean Comparador(Pilhas pilhaAux0, Pilhas pilhaAux1) {
-        if (pilhaAux0.tamanho() != pilhaAux1.tamanho()) {
-            return false;
+    public boolean Palindromo(Pilhas pilhaAux0, Pilhas pilhaAux1, Pilhas pilhaAux2) {
+        for (int i = 0; i <= pilhaAux0.tamanho()+1; i++) {
+            pilhaAux2.empilhar(pilhaAux0.Desempilha());
         }
-        for(int i = pilhaAux0.tamanho()-1;i<=-1;i--){
-            pillhaAux2.empilhar(pilhaAux0.Desempilha());
-        }
-        while (pilhaAux0.pilhaVazia() != true) {
-            if (!pillhaAux2.ExibeUltimoValor().equals(pilhaAux1.ExibeUltimoValor())) {
+        while (pilhaAux2.pilhaVazia() == true) {
+            if (!pilhaAux2.Desempilha().equals(pilhaAux1.Desempilha())) {
                 return false;
             }
         }
