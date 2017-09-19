@@ -8,9 +8,8 @@ public class Palindromo {
         Scanner scan = new Scanner(System.in);
         Pilhas pilhaAux0 = new Pilhas();
         Pilhas pilhaAux1 = new Pilhas();
-        Pilhas pillhaAux2 = new Pilhas();
+        Pilhas pilhaAux2 = new Pilhas();
         String continuar = "s";
-        Pilhas metodos = new Pilhas();
         int j = 2;
 
         System.out.println("Informe uma primeira letra da palavra");
@@ -27,16 +26,22 @@ public class Palindromo {
             }
 
         }
-        //Imprimindo e ao mesmo tempo comparando o retorno booleano da função
-        
-        System.out.println(pillhaAux2.Palindromo(pilhaAux0, pilhaAux1, pillhaAux2) ? "Sim é palindromo" : "Não é palindromo");
+
+        if (pilhaAux2.Palindromo(pilhaAux0, pilhaAux1, pilhaAux2) == true) {
+            System.out.println("");
+            System.out.println("Sim é palindromo");
+        } else {
+            System.out.println("");
+            System.out.println("Não é palindromo");
+        }
+
+        System.out.println("");
         System.out.println("PilhaAux2");
-        pillhaAux2.imprimepilha();
+        pilhaAux2.imprimepilha();
         System.out.println("PilhaAux0");
         pilhaAux0.imprimepilha();
         System.out.println("PilhaAux1");
         pilhaAux1.imprimepilha();
-        
 
     }
 
